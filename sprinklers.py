@@ -8,12 +8,12 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 # Setup GPIO pins for zones
-zone1 = 4
-zone2 = 17
-zone3 = 18
-zone4 = 22
-zone5 = 23
-zone6 = 24
+Z1 = 4
+Z2 = 17
+Z3 = 18
+Z4 = 22
+Z5 = 23
+Z6 = 24
 
 # Time to run each zone in minutes (WARNING: the number of zones must equal the number of times)
 # **** EDIT HERE TO ADJUST WATERING TIME PER ZONE ****
@@ -25,7 +25,7 @@ timeZ5 = 1
 timeZ6 = 1
 
 # Build zone and time arrays
-zone = [zone1, zone2, zone3, zone4, zone5, zone6]
+zone = [Z1, Z2, Z3, Z4, Z5, Z6]
 timeZ = [timeZ1, timeZ2, timeZ3, timeZ4, timeZ5, timeZ6]
 
 # loop through pins, set mode and state to 'off' (relay is on when input is sunk to GND)
@@ -35,6 +35,7 @@ for x in range(len(zone)):
 
 try:
     print datetime.now().strftime('%a %m/%d/%Y')
+    # INSERT RAIN TEST HERE
     for x in range(len(zone)):
         print "Zone"+ str(x+1) +":\nstarted  " + datetime.now().strftime('%H:%M:%S')
         GPIO.output(zone[x],GPIO.LOW)
