@@ -14,8 +14,10 @@ z3 = gpiozero.DigitalOutputDevice(18,active_high=False,initial_value=False)
 z4 = gpiozero.DigitalOutputDevice(22,active_high=False,initial_value=False)
 z5 = gpiozero.DigitalOutputDevice(23,active_high=False,initial_value=False)
 z6 = gpiozero.DigitalOutputDevice(24,active_high=False,initial_value=False)
+z7 = gpiozero.DigitalOutputDevice(25,active_high=False,initial_value=False)
+z8 = gpiozero.DigitalOutputDevice(27,active_high=False,initial_value=False)
 
-zones = [0, z1, z2, z3, z4, z5, z6]
+zones = [0, z1, z2, z3, z4, z5, z6, z7, z8]
 
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):
